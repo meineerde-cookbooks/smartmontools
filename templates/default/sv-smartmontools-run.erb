@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# smartmontools runit script
+#
+# This file was automatically created by Chef.
+# All manual changes are going to be overridden
+#
+# Source: smartmontools::templates/default/sv-smartmontools-run.erb
+
+set -e
+exec /usr/sbin/smartd --no-fork --quit=errors <%= node['smartmontools']['smartd_opts'].join(' ') %> 2>&1

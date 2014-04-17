@@ -1,0 +1,25 @@
+LineLength:
+  Max: 120
+
+# These word arrays should look more like arrays
+PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%w': '[]'
+    '%W': '[]'
+
+# We want to be compatible with Ruby 1.8.7
+HashSyntax:
+  EnforcedStyle: hash_rockets
+
+# Default parameter values should have no space
+SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+# Blocks should have a space after their method name
+SpaceBeforeBlockBraces:
+  EnforcedStyle: space
+
+# I like inject
+CollectionMethods:
+  PreferredMethods:
+    inject: null

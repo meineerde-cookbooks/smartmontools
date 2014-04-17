@@ -1,0 +1,16 @@
+# SMART configuration
+#
+# This file was automatically created by Chef.
+# All manual changes are going to be overridden
+#
+# Source: smartmontools::templates/default/smartd.conf.erb
+
+<% extend Smartmontools::TemplateHelpers -%>
+
+<% if node['smartmontools']['devices'].length > 0 -%>
+<%   node['smartmontools']['devices'].sort.each do |device, opts| -%>
+<%=    "/dev/#{device} #{device_opts(opts).join(' ')}" %>
+<%   end -%>
+<% else -%>
+DEVICESCAN <%= device_opts.join(' ') %>
+<% end %>

@@ -1,0 +1,13 @@
+# Defaults for smartmontools initscript (/etc/init.d/smartmontools)
+# This is a POSIX shell fragment
+#
+# This file was automatically created by Chef.
+# All manual changes are going to be overridden
+#
+# Source: smartmontools::templates/default/smartmontools_default.erb
+
+# set to yes to start smartd on system startup
+start_smartd=<%= node['smartmontools']['devices'].length > 0 ? "yes" : "" %>
+
+# additional options for smartd on startup
+smartd_opts=<%= Shellwords.escape node['smartmontools']['smartd_opts'].join(' ') %>
