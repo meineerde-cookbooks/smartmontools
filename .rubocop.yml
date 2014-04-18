@@ -15,9 +15,9 @@ HashSyntax:
 SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: no_space
 
-# Blocks should have a space after their method name
-SpaceBeforeBlockBraces:
-  EnforcedStyle: space
+# We don't need encoding comments as we don't deal with UTF-8 values here
+Encoding:
+  Enabled: false
 
 # I like inject
 CollectionMethods:
