@@ -4,15 +4,6 @@ template '/etc/smartd.conf' do
   owner 'root'
   group 'root'
   mode '0644'
-
-  variables lazy do
-    addresses = Array(default['smartmontools']['email_addresses'])
-    if addresses.empty?
-      { :email_addresses => '' }
-    else
-      { :email_addresses => "-m #{addresses.join(',')}" }
-    end
-  end
   source 'smartd.conf.erb'
 end
 
